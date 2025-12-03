@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compassionate Ministry - Emmanuel Christian Church</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style/styles.css">
+    <style>
+        .ministry-page {padding: 80px 0 60px;}
+        .ministry-header {
+            background: linear-gradient(rgba(0, 150, 136, 0.9), rgba(0, 150, 136, 0.8)), url('https://images.unsplash.com/photo-1559028012-481c04fa702d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover; background-position: center;
+            color: white; padding: 4rem 0; text-align: center; margin-bottom: 3rem;
+        }
+        .ministry-header h1 {font-size: 3rem; margin-bottom: 0.5rem;}
+        .ministry-header p {font-size: 1.2rem; max-width: 800px; margin: 0 auto;}
+        
+        .ministry-content {display: grid; grid-template-columns: 2fr 1fr; gap: 3rem; margin-bottom: 4rem;}
+        
+        .ministry-details h2 {color: #2c3e50; margin-top: 0; margin-bottom: 1.5rem; font-size: 2rem;}
+        .ministry-details h3 {color: #009688; margin-top: 2rem; margin-bottom: 1rem;}
+        .ministry-details p {color: #555; line-height: 1.6; margin-bottom: 1.5rem;}
+        
+        .ministry-highlights {background: #e0f2f1; padding: 2rem; border-radius: 10px; margin: 2rem 0; border-left: 5px solid #009688;}
+        .highlight-item {display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1rem;}
+        .highlight-icon {background-color: #009688; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;}
+        
+        .ministry-sidebar {background: #f8f9fa; padding: 2rem; border-radius: 10px; height: fit-content;}
+        .leader-profile {text-align: center; margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid #ddd;}
+        .leader-avatar {width: 120px; height: 120px; border-radius: 50%; background-color: #009688; color: white; display: flex; align-items: center; justify-content: center; font-size: 3rem; margin: 0 auto 1rem;}
+        
+        .sidebar-info {margin-bottom: 2rem;}
+        .sidebar-info h4 {color: #2c3e50; margin-top: 0; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;}
+        .info-item {display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.8rem; color: #555;}
+        
+        .btn-join {display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; background-color: #009688; color: white; width: 100%; padding: 1rem; border-radius: 5px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; margin-top: 1rem;}
+        .btn-join:hover {background-color: #00796b;}
+        
+        .back-to-ministries {text-align: center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #eaeaea;}
+        .back-link {display: inline-flex; align-items: center; gap: 0.5rem; color: #009688; text-decoration: none; font-weight: 600;}
+        .back-link:hover {text-decoration: underline;}
+        
+        @media (max-width: 992px) {.ministry-content {grid-template-columns: 1fr;}}
+        @media (max-width: 768px) {.ministry-header h1 {font-size: 2.2rem;}}
+    </style>
+</head>
+<body>
+<header>
+    <div class="container header-container">
+        <div class="logo">
+            <div class="logo-icon"><img src="images/327427241_3232026523774490_1548008337393578848_n.ico" alt="logo-icon"></div>
+            <div class="logo-text">
+                <h1>Emmanuel Christian Church</h1>
+                <p>General Trias, Cavite <i class="fas fa-location"></i></p>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-menu-btn"><i class="fas fa-bars"></i></div>
+    </div>
+</header>
+
+<div class="ministry-header">
+    <div class="container">
+        <h1>Compassionate Ministry</h1>
+        <p>Serving those in need through practical assistance, emotional support, and Christ's love.</p>
+    </div>
+</div>
+
+<section class="ministry-page">
+    <div class="container">
+        <div class="ministry-content">
+            <div class="ministry-details">
+                <h2>Serving with Compassion</h2>
+                <p>The Compassionate Ministry reaches out to people in our community who are facing difficult circumstances. We provide practical assistance, emotional support, and share the hope of Christ with those in need, following Jesus' example of compassion.</p>
+                
+                <div class="ministry-highlights">
+                    <h3>Our Programs</h3>
+                    <div class="highlight-item">
+                        <div class="highlight-icon"><i class="fas fa-utensils"></i></div>
+                        <div class="highlight-content">
+                            <h4>Food Assistance</h4>
+                            <p>Weekly food distribution and feeding programs for families in need</p>
+                        </div>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="highlight-icon"><i class="fas fa-tshirt"></i></div>
+                        <div class="highlight-content">
+                            <h4>Clothing Ministry</h4>
+                            <p>Providing clothing and essential items to those in difficult situations</p>
+                        </div>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="highlight-icon"><i class="fas fa-hand-holding-medical"></i></div>
+                        <div class="highlight-content">
+                            <h4>Medical Missions</h4>
+                            <p>Quarterly medical and dental missions in partnership with local health workers</p>
+                        </div>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="highlight-icon"><i class="fas fa-heart"></i></div>
+                        <div class="highlight-content">
+                            <h4>Counseling Support</h4>
+                            <p>Emotional and spiritual support for those facing crises or difficult life situations</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <h3>Community Impact</h3>
+                <p>Each month, we serve over 200 families through our various outreach programs. Our volunteers provide not just material help, but also build relationships and share God's love through personal connections.</p>
+                
+                <h3>Get Involved</h3>
+                <p>Whether you can donate resources, volunteer your time, or help with organizing events, there are many ways to serve in our Compassionate Ministry. Training and orientation are provided for all new volunteers.</p>
+            </div>
+        </div>
+        
+        <div class="back-to-ministries">
+            <a href="ministries.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to All Ministries</a>
+        </div>
+    </div>
+</section>
+
+ <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <div class="logo">
+                        <div class="logo-icon">
+                            <i><img src="images/327427241_3232026523774490_1548008337393578848_n.ico" alt=""></i>
+                        </div>
+                        <div class="logo-text">
+                            <h3>Emmanuel Christian Church</h3>
+                            <p>General Trias, Cavite</p>
+                        </div>
+                    </div>
+                    <p>Growing in faith, serving in love, and sharing the hope of Christ with our community.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/ecc.cavite" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.youtube.com/@emmanuelchristianchannelecc"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Service Times</h3>
+                    <ul class="footer-links">
+                        <li>Sunday Worship: Sunday, 9:00 AM - 11:00 AM</li>
+                        <li>Prayer Meeting: Wednesday, 7:00 - 8:00 PM</li>
+                        <li>Bible Studies: Different Schedules</li>
+                        <li>Youth Bible Study: Sunday, 11:00 - 12:00 NN</li>
+                        <li>Sunday School: Sunday, 2:00 - 4:00 PM</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to our newsletter to receive updates and announcements.</p>
+                    <div class="footer-newsletter">
+                        <form>
+                            <input type="email" placeholder="Your Email" required>
+                            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <div class="container">
+                <p>&copy; 2025 Emmanuel Christian Church. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

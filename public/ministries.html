@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Ministries - Emmanuel Christian Church</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style/styles.css">
+    <style>
+        .ministries-page {
+            padding: 80px 0 60px;
+        }
+        
+        .page-header {
+            background: linear-gradient(rgba(74, 107, 175, 0.9), rgba(74, 107, 175, 0.8)), url('https://i.postimg.cc/y6RTtSXL/3cd43506-a13f-47ca-baa6-992dcd2f5fe6.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .page-header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .ministries-intro {
+            background: linear-gradient(135deg, #f0f4ff 0%, #e8efff 100%);
+            padding: 3rem;
+            border-radius: 10px;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        
+        .ministries-intro h2 {
+            color: #2c3e50;
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+        
+        .ministries-intro p {
+            color: #555;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+        
+        .ministry-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #4a6baf;
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .ministries-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+        
+        .ministry-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        .ministry-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .ministry-icon {
+            background-color: #4a6baf;
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+            font-size: 2rem;
+        }
+        
+        .ministry-content {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .ministry-title {
+            color: #2c3e50;
+            margin-top: 0;
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+        
+        .ministry-description {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            flex: 1;
+        }
+        
+        .ministry-leader {
+            color: #4a6baf;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .ministry-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-top: auto;
+            padding-top: 1rem;
+            border-top: 1px solid #eee;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .btn-ministry {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background-color: #4a6baf;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+        
+        .btn-ministry:hover {
+            background-color: #3a5b9f;
+        }
+        
+        .get-involved {
+            background: linear-gradient(135deg, #4a6baf 0%, #3a5b9f 100%);
+            color: white;
+            padding: 3rem;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 4rem;
+        }
+        
+        .get-involved h2 {
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+        
+        .get-involved p {
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+        }
+        
+        .btn-involved {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background-color: white;
+            color: #4a6baf;
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-involved:hover {
+            background-color: #f0f4ff;
+            transform: translateY(-2px);
+        }
+        
+        @media (max-width: 768px) {
+            .ministries-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .ministries-intro {
+                padding: 2rem;
+            }
+            
+            .ministry-stats {
+                gap: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <img src="images/327427241_3232026523774490_1548008337393578848_n.ico" alt="logo-icon">
+                </div>
+                <div class="logo-text">
+                    <h1>Emmanuel Christian Church</h1>
+                    <p>General Trias, Cavite <i class="fas fa-location"></i></p>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <div class="page-header">
+        <div class="container">
+            <h1>Our Ministries</h1>
+            <p>Discover how you can serve, grow, and connect through our various ministry opportunities. Each ministry is designed to help you use your gifts and passions for God's glory.</p>
+        </div>
+    </div>
+
+    <section class="ministries-page">
+        <div class="container">
+            <!-- Ministries Grid -->
+            <div class="ministries-grid">
+                <!-- Praise and Worship -->
+                <div class="ministry-card">
+                    <div class="ministry-icon">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <div class="ministry-content">
+                        <h3 class="ministry-title">Praise and Worship</h3>
+                        <p class="ministry-description">Leading the congregation in heartfelt worship through music and arts. This ministry creates an atmosphere where people can encounter God through contemporary and traditional worship.</p>
+                        <a href="praise-worship.html" class="btn-ministry">
+                            Learn More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Women's Ministry -->
+                <div class="ministry-card">
+                    <div class="ministry-icon">
+                        <i class="fas fa-praying-hands"></i>
+                    </div>
+                    <div class="ministry-content">
+                        <h3 class="ministry-title">Women's Ministry</h3>
+                        <p class="ministry-description">Encouraging and equipping women to grow in their faith and serve others. Through Bible studies, retreats, and fellowship events, women find support and spiritual growth.</p>
+                        <a href="womens-ministry.html" class="btn-ministry">
+                            Learn More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Home Visitation -->
+                <div class="ministry-card">
+                    <div class="ministry-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <div class="ministry-content">
+                        <h3 class="ministry-title">Home Visitation Ministry</h3>
+                        <p class="ministry-description">Visiting and ministering to church members and newcomers in their homes. This ministry provides pastoral care, prayer, and fellowship to those who need encouragement.</p>
+                        <a href="home-visitation.html" class="btn-ministry">
+                            Learn More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Compassionate Ministry -->
+                <div class="ministry-card">
+                    <div class="ministry-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <div class="ministry-content">
+                        <h3 class="ministry-title">Compassionate Ministry</h3>
+                        <p class="ministry-description">Serving those in need through practical assistance and emotional support. This ministry reaches out to the community with food assistance, counseling, and practical help.</p>
+                        <a href="compassionate-ministry.html" class="btn-ministry">
+                            Learn More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Prayer Warriors -->
+                <div class="ministry-card">
+                    <div class="ministry-icon">
+                        <i class="fas fa-pray"></i>
+                    </div>
+                    <div class="ministry-content">
+                        <h3 class="ministry-title">Prayer Warriors</h3>
+                        <p class="ministry-description">Interceding for the needs of our church, community, and world through prayer. This dedicated group meets regularly to pray for specific needs and God's guidance.</p>
+                        <a href="prayer-warriors.html" class="btn-ministry">
+                            Learn More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Ushering Ministry -->
+                <div class="ministry-card">
+                    <div class="ministry-icon">
+                        <i class="fas fa-door-open"></i>
+                    </div>
+                    <div class="ministry-content">
+                        <h3 class="ministry-title">Ushering Ministry</h3>
+                        <p class="ministry-description">Welcoming and assisting attendees during our worship services and events. Ushers create a welcoming environment and help services run smoothly.</p>
+                        <a href="ushering-ministry.html" class="btn-ministry">
+                            Learn More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Men's Ministry -->
+                <div class="ministry-card">
+                    <div class="ministry-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="ministry-content">
+                        <h3 class="ministry-title">Men's Ministry</h3>
+                        <p class="ministry-description">Building strong Christian men through fellowship, discipleship, and service. Men gather for Bible study, accountability, and service projects in the community.</p>
+                        <a href="mens-ministry.html" class="btn-ministry">
+                            Learn More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Youth Ministry -->
+                <div class="ministry-card">
+                    <div class="ministry-icon">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <div class="ministry-content">
+                        <h3 class="ministry-title">Youth Ministry</h3>
+                        <p class="ministry-description">Engaging teenagers and young adults in their faith journey through relevant programs. Youth experience dynamic worship, relevant teaching, and fun fellowship.</p>
+                        <a href="youth-ministry.html" class="btn-ministry">
+                            Learn More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Children Ministry -->
+                <div class="ministry-card">
+                    <div class="ministry-icon">
+                        <i class="fas fa-child"></i>
+                    </div>
+                    <div class="ministry-content">
+                        <h3 class="ministry-title">Children Ministry</h3>
+                        <p class="ministry-description">Nurturing children in faith through age-appropriate teaching and fun activities. Kids learn about God through interactive lessons, music, and creative play.</p>
+                        <a href="children-ministry.html" class="btn-ministry">
+                            Learn More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Get Involved Section -->
+            <div class="get-involved">
+                <h2>Ready to Get Involved?</h2>
+                <p>Whether you're looking to serve, grow, or connect, there's a place for you in our ministries. Contact us to learn more about how you can join a ministry team.</p>
+                <a href="contact.html" class="btn-involved">
+                    <i class="fas fa-envelope"></i> Contact Ministry Leaders
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <div class="logo">
+                        <div class="logo-icon">
+                            <i><img src="images/327427241_3232026523774490_1548008337393578848_n.ico" alt=""></i>
+                        </div>
+                        <div class="logo-text">
+                            <h3>Emmanuel Christian Church</h3>
+                            <p>General Trias, Cavite</p>
+                        </div>
+                    </div>
+                    <p>Growing in faith, serving in love, and sharing the hope of Christ with our community.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/ecc.cavite" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.youtube.com/@emmanuelchristianchannelecc"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Service Times</h3>
+                    <ul class="footer-links">
+                        <li>Sunday Worship: Sunday, 9:00 AM - 11:00 AM</li>
+                        <li>Prayer Meeting: Wednesday, 7:00 - 8:00 PM</li>
+                        <li>Bible Studies: Different Schedules</li>
+                        <li>Youth Bible Study: Sunday, 11:00 - 12:00 NN</li>
+                        <li>Sunday School: Sunday, 2:00 - 4:00 PM</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <div class="container">
+                <p>&copy; 2025 Emmanuel Christian Church. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

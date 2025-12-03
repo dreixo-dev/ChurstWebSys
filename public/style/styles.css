@@ -168,10 +168,6 @@
             color: var(--secondary);
         }
         
-        nav ul li a.active {
-            color: var(--secondary);
-        }
-        
         nav ul li a::after {
             content: '';
             position: absolute;
@@ -181,11 +177,6 @@
             height: 2px;
             background-color: var(--secondary);
             transition: var(--transition);
-        }
-        
-        nav ul li a:hover::after,
-        nav ul li a.active::after {
-            width: 100%;
         }
         
         .mobile-menu-btn {
@@ -981,4 +972,442 @@
         
         .hidden {
             display: none;
+        }
+         .beliefs-hero {
+            background: linear-gradient(rgba(26, 75, 140, 0.9), rgba(26, 75, 140, 0.8)), url('https://images.unsplash.com/photo-1438032005730-c779502df39b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+        }
+
+        .doctrines-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .doctrine-card {
+            background: white;
+            border-radius: 15px;
+            padding: 40px 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+            border-left: 5px solid var(--secondary);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .doctrine-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+        }
+
+        .doctrine-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .doctrine-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            color: white;
+            font-size: 2rem;
+        }
+
+        .doctrine-card h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .doctrine-card p {
+            color: var(--gray);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .scripture {
+            background: var(--light-gray);
+            padding: 15px;
+            border-radius: 8px;
+            font-style: italic;
+            color: var(--dark);
+            border-left: 3px solid var(--secondary);
+            margin: 20px 0;
+        }
+
+        .core-values {
+            background: linear-gradient(135deg, var(--primary) 0%, #2a5f9e 100%);
+            color: white;
+            padding: 80px 0;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .value-item {
+            text-align: center;
+            padding: 30px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .value-icon {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+
+        .value-item h4 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: white;
+        }
+
+        .statement-of-faith {
+            padding: 80px 0;
+        }
+
+        .faith-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .faith-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--gray);
+            margin-bottom: 30px;
+        }
+
+        .baptism-section {
+            background: var(--light-gray);
+            padding: 80px 0;
+        }
+
+        .baptism-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .baptism-text h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        .baptism-image {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .baptism-image img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .baptism-image:hover img {
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .baptism-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .doctrines-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .doctrine-card {
+                padding: 30px 20px;
+            }
+        }
+         /* Additional Styles for Statement of Faith Page */
+        .statement-hero {
+            background: linear-gradient(rgba(26, 75, 140, 0.9), rgba(26, 75, 140, 0.8)), url('https://images.unsplash.com/photo-1518834107812-67d4d9160049?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+        }
+
+        .creeds-section {
+            background: var(--light-gray);
+            padding: 80px 0;
+        }
+
+        .creeds-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .creed-card {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: var(--shadow);
+            border-left: 5px solid var(--secondary);
+        }
+
+        .creed-card h3 {
+            color: var(--primary);
+            margin-bottom: 25px;
+            font-size: 1.8rem;
+            text-align: center;
+        }
+
+        .creed-content {
+            line-height: 1.8;
+            color: var(--gray);
+        }
+
+        .creed-content p {
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .doctrinal-points {
+            padding: 80px 0;
+        }
+
+        .doctrinal-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .doctrinal-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            border-top: 4px solid var(--primary);
+            transition: var(--transition);
+        }
+
+        .doctrinal-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .doctrinal-card h4 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .doctrinal-card p {
+            color: var(--gray);
+            line-height: 1.7;
+        }
+
+        .scripture-reference {
+            background: var(--light);
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            border-left: 3px solid var(--secondary);
+            font-style: italic;
+            color: var(--dark);
+        }
+
+        .reformed-section {
+            background: linear-gradient(135deg, var(--primary) 0%, #2a5f9e 100%);
+            color: white;
+            padding: 80px 0;
+        }
+
+        .reformed-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .reformed-points {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .reformed-point {
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .reformed-point h4 {
+            color: var(--secondary);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .practical-section {
+            padding: 80px 0;
+        }
+
+        .practical-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .practical-card {
+            text-align: center;
+            padding: 40px 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .practical-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .practical-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            color: white;
+            font-size: 2rem;
+        }
+
+        .practical-card h4 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        .historical-section {
+            background: var(--light-gray);
+            padding: 80px 0;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 50px auto 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--secondary);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 50px;
+            width: 50%;
+            padding: 20px;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+
+        .timeline-content {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            top: 25px;
+            width: 20px;
+            height: 20px;
+            background: var(--secondary);
+            border-radius: 50%;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content::before {
+            right: -40px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content::before {
+            left: -40px;
+        }
+
+        .timeline-year {
+            color: var(--secondary);
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 20px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 50px;
+                padding-right: 0;
+            }
+            
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+            
+            .timeline-content::before {
+                left: -30px !important;
+            }
+            
+            .creeds-grid {
+                grid-template-columns: 1fr;
+            }
         }

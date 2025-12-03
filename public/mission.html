@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Missions - Emmanuel Christian Church</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style/styles.css">
+    <style>
+        .missions-page {
+            padding: 80px 0 60px;
+        }
+        
+        .page-header {
+            background: linear-gradient(rgba(233, 30, 99, 0.9), rgba(233, 30, 99, 0.8)), url('https://i.postimg.cc/y6RTtSXL/3cd43506-a13f-47ca-baa6-992dcd2f5fe6.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 5rem 0;
+            text-align: center;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+        
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.3);
+        }
+        
+        .page-header .container {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .page-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .page-header p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+        
+        .vision-mission {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 4rem 0;
+            margin-bottom: 4rem;
+        }
+        
+        .vision-mission-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+        
+        .vision-card, .mission-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .vision-card:hover, .mission-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .vision-card {
+            border-top: 5px solid #e91e63;
+        }
+        
+        .mission-card {
+            border-top: 5px solid #2196f3;
+        }
+        
+        .vision-icon, .mission-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+        }
+        
+        .vision-icon {
+            color: #e91e63;
+        }
+        
+        .mission-icon {
+            color: #2196f3;
+        }
+        
+        .vision-card h3, .mission-card h3 {
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+        
+        .vision-card p, .mission-card p {
+            color: #555;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+        
+        .missions-section {
+            margin-bottom: 5rem;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+        
+        .section-title p {
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+        
+        .missions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+        
+        .mission-item {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .mission-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+        
+        .mission-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .mission-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .mission-item:hover .mission-image img {
+            transform: scale(1.05);
+        }
+        
+        .mission-content {
+            padding: 2rem;
+        }
+        
+        .mission-type {
+            display: inline-block;
+            padding: 0.4rem 1.2rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .local {
+            background: #e3f2fd;
+            color: #1565c0;
+        }
+        
+        .international {
+            background: #fce4ec;
+            color: #c2185b;
+        }
+        
+        .mission-content h3 {
+            color: #2c3e50;
+            margin-top: 0;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .mission-content p {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        
+        .mission-stats {
+            display: flex;
+            justify-content: space-between;
+            border-top: 1px solid #eee;
+            padding-top: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-number {
+            display: block;
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #e91e63;
+            margin-bottom: 0.3rem;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .impact-section {
+            background: linear-gradient(135deg, #e91e63 0%, #c2185b 100%);
+            color: white;
+            padding: 4rem 0;
+            border-radius: 15px;
+            margin-bottom: 5rem;
+        }
+        
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .impact-item {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .impact-number {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .impact-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .get-involved {
+            text-align: center;
+            padding: 4rem 0;
+            background: #f8f9fa;
+            border-radius: 15px;
+            margin-bottom: 4rem;
+        }
+        
+        .get-involved h2 {
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+        }
+        
+        .get-involved p {
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            font-size: 1.1rem;
+        }
+        
+        .involvement-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .option-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+        }
+        
+        .option-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .option-icon {
+            font-size: 2.5rem;
+            color: #e91e63;
+            margin-bottom: 1.5rem;
+        }
+        
+        .option-card h4 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+        
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #e91e63;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: 2rem;
+            margin-left: 458px;
+        }
+        
+        .btn-primary:hover {
+            background: #c2185b;
+            transform: translateY(-2px);
+
+        }
+        
+        .btn-outline {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: transparent;
+            color: #e91e63;
+            border: 2px solid #e91e63;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-outline:hover {
+            background: #e91e63;
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .missions-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .vision-mission-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .impact-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .involvement-options {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="container header-container">
+        <div class="logo">
+            <div class="logo-icon">
+                <img src="images/327427241_3232026523774490_1548008337393578848_n.ico" alt="logo-icon">
+            </div>
+            <div class="logo-text">
+                <h1>Emmanuel Christian Church</h1>
+                <p>General Trias, Cavite <i class="fas fa-location"></i></p>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+        </div>
+    </div>
+</header>
+
+<div class="page-header">
+    <div class="container">
+        <h1>Missions</h1>
+        <p>Taking the Gospel to our local community and around the world. Sharing God's love through practical service and spiritual transformation.</p>
+    </div>
+</div>
+
+<section class="missions-page">
+    <div class="container">
+        <!-- Vision & Mission Section -->
+        <div class="vision-mission">
+            <div class="section-title">
+                <h2>Our Vision & Mission</h2>
+                <p>We want to share the Good News of the Lord, and extend the blessing of SALVATION in our community and reach as many people as possible, as commanded by our Lord Jesus Christ in "Matthew 28:19-20"
+Matthew 28:19-20
+"Go therefore and make disciples of all the nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit, teaching them to observe all things that I have commanded you; and lo, l am with you always, even to the end of the age." Amen.</p>
+            </div>
+            
+            <div class="vision-mission-grid">
+                <div class="vision-card">
+                    <div class="vision-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Our Vision</h3>
+                    <p>Emmanuel Christian Church envisions being a worshipping community of believer in Christ which proclaims the Gospel in words and deed for the transformation of lives and society.</p>
+                </div>
+                
+                <div class="mission-card">
+                    <div class="mission-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Our Mission</h3>
+                    <p>
+    As a united body of Christ and established by the power of the Holy Spirit, ECC aims to glorify God through the following:
+    <br><br>
+    <strong>1.</strong> We <strong>EVANGELIZE</strong> the unsaved by proclaiming the Gospel.
+    <br>
+    <strong>2.</strong> We <strong>COVENANT</strong> to care for each member disciple for their spiritual edification.
+    <br>
+    <strong>3.</strong> We <strong>COMMIT</strong> ourselves to Christ-like living and works of service and worship.
+</p>
+
+                </div>
+            </div>
+        </div>
+            <a href="contact.html" class="btn-primary">
+                <i class="fas fa-envelope"></i> Contact Missions Team
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <div class="logo">
+                        <div class="logo-icon">
+                            <i><img src="images/327427241_3232026523774490_1548008337393578848_n.ico" alt=""></i>
+                        </div>
+                        <div class="logo-text">
+                            <h3>Emmanuel Christian Church</h3>
+                            <p>General Trias, Cavite</p>
+                        </div>
+                    </div>
+                    <p>Growing in faith, serving in love, and sharing the hope of Christ with our community.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/ecc.cavite" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.youtube.com/@emmanuelchristianchannelecc"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Service Times</h3>
+                    <ul class="footer-links">
+                        <li>Sunday Worship: Sunday, 9:00 AM - 11:00 AM</li>
+                        <li>Prayer Meeting: Wednesday, 7:00 - 8:00 PM</li>
+                        <li>Bible Studies: Different Schedules</li>
+                        <li>Youth Bible Study: Sunday, 11:00 - 12:00 NN</li>
+                        <li>Sunday School: Sunday, 2:00 - 4:00 PM</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to our newsletter to receive updates and announcements.</p>
+                    <div class="footer-newsletter">
+                        <form>
+                            <input type="email" placeholder="Your Email" required>
+                            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <div class="container">
+                <p>&copy; 2025 Emmanuel Christian Church. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praise and Worship Ministry - Emmanuel Christian Church</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style/styles.css">
+    <style>
+        .ministry-page {
+            padding: 80px 0 60px;
+        }
+        
+        .ministry-header {
+            background: linear-gradient(rgba(74, 107, 175, 0.9), rgba(74, 107, 175, 0.8)), url('https://i.postimg.cc/y6RTtSXL/3cd43506-a13f-47ca-baa6-992dcd2f5fe6.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .ministry-header h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .ministry-header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .ministry-content {
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+        
+        .ministry-details h2 {
+            color: #2c3e50;
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+        
+        .ministry-details h3 {
+            color: #4a6baf;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .ministry-details p {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        
+        .ministry-highlights {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+        }
+        
+        .highlight-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .highlight-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        
+        .highlight-icon {
+            background-color: #4a6baf;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        
+        .highlight-content h4 {
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+            color: #2c3e50;
+        }
+        
+        .ministry-sidebar {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 10px;
+            height: fit-content;
+        }
+        
+        .leader-profile {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .leader-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background-color: #4a6baf;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            margin: 0 auto 1rem;
+        }
+        
+        .leader-info h3 {
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+            color: #2c3e50;
+        }
+        
+        .leader-info p {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .sidebar-info {
+            margin-bottom: 2rem;
+        }
+        
+        .sidebar-info h4 {
+            color: #2c3e50;
+            margin-top: 0;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.8rem;
+            color: #555;
+        }
+        
+        .btn-join {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            background-color: #4a6baf;
+            color: white;
+            width: 100%;
+            padding: 1rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+        
+        .btn-join:hover {
+            background-color: #3a5b9f;
+        }
+        
+        .team-gallery {
+            margin-top: 3rem;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .gallery-item {
+            background: #f0f4ff;
+            border-radius: 5px;
+            padding: 1rem;
+            text-align: center;
+            font-weight: 600;
+            color: #4a6baf;
+        }
+        
+        .back-to-ministries {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #eaeaea;
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #4a6baf;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 992px) {
+            .ministry-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .ministry-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .highlight-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <img src="images/327427241_3232026523774490_1548008337393578848_n.ico" alt="logo-icon">
+                </div>
+                <div class="logo-text">
+                    <h1>Emmanuel Christian Church</h1>
+                    <p>General Trias, Cavite <i class="fas fa-location"></i></p>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <div class="ministry-header">
+        <div class="container">
+            <h1>Praise and Worship Ministry</h1>
+            <p>Creating an atmosphere where hearts connect with God through music, arts, and authentic worship.</p>
+        </div>
+    </div>
+
+    <section class="ministry-page">
+        <div class="container">
+            <div class="ministry-content">
+                <div class="ministry-details">
+                    <h2>Leading the Congregation in Worship</h2>
+                    <p>The Praise and Worship Ministry at Emmanuel Christian Church is dedicated to creating meaningful worship experiences that draw people closer to God. We believe worship is more than just music—it's our response to who God is and what He has done.</p>
+                    
+                    <div class="ministry-highlights">
+                        <h3>What We Do</h3>
+                        <div class="highlight-list">
+                            <div class="highlight-item">
+                                <div class="highlight-icon">
+                                    <i class="fas fa-music"></i>
+                                </div>
+                                <div class="highlight-content">
+                                    <h4>Sunday Worship</h4>
+                                    <p>Lead congregational singing during Sunday services with contemporary and traditional music</p>
+                                </div>
+                            </div>
+                            <div class="highlight-item">
+                                <div class="highlight-icon">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <div class="highlight-content">
+                                    <h4>Rehearsals</h4>
+                                    <p>Weekly rehearsals to prepare hearts and skills for leading others in worship</p>
+                                </div>
+                            </div>
+                            <div class="highlight-item">
+                                <div class="highlight-icon">
+                                    <i class="fas fa-pray"></i>
+                                </div>
+                                <div class="highlight-content">
+                                    <h4>Worship Nights</h4>
+                                    <p>Special worship events focused on prayer, reflection, and musical praise</p>
+                                </div>
+                            </div>
+                            <div class="highlight-item">
+                                <div class="highlight-icon">
+                                    <i class="fas fa-microphone"></i>
+                                </div>
+                                <div class="highlight-content">
+                                    <h4>Special Events</h4>
+                                    <p>Provide worship for church conferences, retreats, and community events</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h3>Our Mission</h3>
+                    <p>To lead the congregation in authentic, Spirit-filled worship that glorifies God and transforms lives. We aim to create an environment where people can freely express their love for God through music, song, and other creative arts.</p>
+                    
+                    <h3>Join Our Team</h3>
+                    <p>We're always looking for passionate worshippers to join our ministry. Whether you sing, play an instrument, or have technical skills in sound or multimedia, there's a place for you. No professional experience required—just a heart for worship and willingness to serve.</p>
+                </div>
+            </div>
+            
+            <div class="back-to-ministries">
+                <a href="ministries.html" class="back-link">
+                    <i class="fas fa-arrow-left"></i> Back to All Ministries
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+     <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <div class="logo">
+                        <div class="logo-icon">
+                            <i><img src="images/327427241_3232026523774490_1548008337393578848_n.ico" alt=""></i>
+                        </div>
+                        <div class="logo-text">
+                            <h3>Emmanuel Christian Church</h3>
+                            <p>General Trias, Cavite</p>
+                        </div>
+                    </div>
+                    <p>Growing in faith, serving in love, and sharing the hope of Christ with our community.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/ecc.cavite" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.youtube.com/@emmanuelchristianchannelecc"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Service Times</h3>
+                    <ul class="footer-links">
+                        <li>Sunday Worship: Sunday, 9:00 AM - 11:00 AM</li>
+                        <li>Prayer Meeting: Wednesday, 7:00 - 8:00 PM</li>
+                        <li>Bible Studies: Different Schedules</li>
+                        <li>Youth Bible Study: Sunday, 11:00 - 12:00 NN</li>
+                        <li>Sunday School: Sunday, 2:00 - 4:00 PM</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to our newsletter to receive updates and announcements.</p>
+                    <div class="footer-newsletter">
+                        <form>
+                            <input type="email" placeholder="Your Email" required>
+                            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <div class="container">
+                <p>&copy; 2025 Emmanuel Christian Church. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

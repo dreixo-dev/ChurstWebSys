@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025 Sermons - Emmanuel Christian Church</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style/styles.css">
+    <style>
+        .sermons-page {
+            padding: 80px 0 60px;
+        }
+        
+        .year-header {
+            background: linear-gradient(rgba(33, 64, 125, 0.9), rgba(33, 64, 125, 0.8)), url('https://i.postimg.cc/y6RTtSXL/3cd43506-a13f-47ca-baa6-992dcd2f5fe6.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .year-header h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .year-header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .series-highlight {
+            background-color: #f8f9fa;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 3rem;
+            border-left: 5px solid #21407d;
+        }
+        
+        .series-title {
+            color: #21407d;
+            margin-top: 0;
+        }
+        
+        .sermons-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+        
+        .sermon-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+            border-top: 5px solid #21407d;
+        }
+        
+        .sermon-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .sermon-date {
+            background-color: #21407d;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        .sermon-content {
+            padding: 1.5rem;
+        }
+        
+        .sermon-title {
+            color: #2c3e50;
+            margin-top: 0;
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+        
+        .sermon-speaker {
+            color: #21407d;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .sermon-description {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        
+        .sermon-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .tag {
+            background-color: #f0f4ff;
+            color: #21407d;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
+        
+        .sermon-actions {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .btn-outline {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: transparent;
+            color: #21407d;
+            border: 2px solid #21407d;
+            padding: 0.6rem 1.2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-outline:hover {
+            background-color: #21407d;
+            color: white;
+        }
+        
+        .back-to-sermons {
+            text-align: center;
+            margin-top: 3rem;
+        }
+        
+        .year-filter {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .year-btn {
+            padding: 0.5rem 1.5rem;
+            border: 2px solid #21407d;
+            background: white;
+            color: #21407d;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .year-btn.active {
+            background-color: #21407d;
+            color: white;
+        }
+        
+        .year-btn:hover {
+            background-color: #21407d;
+            color: white;
+        }
+        
+        .upcoming-sermon {
+            position: relative;
+        }
+        
+        .upcoming-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #ff6b6b;
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            z-index: 1;
+        }
+        
+        @media (max-width: 768px) {
+            .sermons-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .year-header h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <img src="images/327427241_3232026523774490_1548008337393578848_n.ico" alt="logo-icon">
+                </div>
+                <div class="logo-text">
+                    <h1>Emmanuel Christian Church</h1>
+                    <p>General Trias, Cavite <i class="fas fa-location"></i></p>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <div class="year-header">
+        <div class="container">
+            <h1>2025 Sermon Archive</h1>
+        </div>
+    </div>
+
+    <section class="sermons-page">
+        <div class="container">
+            <div class="year-filter">
+                <a href="sermons2021.html" class="year-btn">2021</a>
+                <a href="sermons2022.html" class="year-btn">2022</a>
+                <a href="sermons2023.html" class="year-btn">2023</a>
+                <a href="sermons2024.html" class="year-btn">2024</a>
+                <a href="sermons2025.html" class="year-btn active">2025</a>
+            </div>
+
+            <div class="series-highlight">
+                <h2 class="series-title">2025 Sermon Series: Sunday Worship Sermons </h2>
+            </div>
+
+            <div class="sermons-container">
+                <!-- Sermon 1 (Past) -->
+                <div class="sermon-card">
+                    <div class="sermon-date">
+                        Nov 30, 2025
+                    </div>
+                    <div class="sermon-content">
+                        <h3 class="sermon-title">Be Strong in the Lord | Sunday Sermon by Pastor Albert Gono</h3>
+                        <div class="sermon-speaker">
+                            <i class="fas fa-user"></i> Pastor Albert Gono
+                        </div>
+                        <p class="sermon-description">Be Strong in the Lord 2 Timothy 2:1-7.</p>
+                        <div class="sermon-actions">
+                            <a href="https://youtu.be/J3iPi6o5YPk?si=o8_tVxnyFrlm96Ne" class="btn-outline">
+                                <i class="fas fa-play-circle"></i> Watch
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sermon 2 (Past) -->
+                <div class="sermon-card">
+                    <div class="sermon-date">
+                         Nov 2, 2025
+                    </div>
+                    <div class="sermon-content">
+                        <h3 class="sermon-title">The Anchor of Our Hope | Sunday Sermon by Dr. James Armstrong</h3>
+                        <div class="sermon-speaker">
+                            <i class="fas fa-user"></i> Dr. James Armstrong
+                        </div>
+                        <p class="sermon-description">1 Peter 1:22-23 22 Now that you have purified yourselves by obeying the truth so that you have sincere love for each other, love one another deeply, from the heart.</p>
+                        <div class="sermon-actions">
+                            <a href="https://youtu.be/tr0EvWwgIik?si=z3OJwhMQwgk694T6" class="btn-outline">
+                                <i class="fas fa-play-circle"></i> Watch
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sermon 3 (Past) -->
+                <div class="sermon-card">
+                    <div class="sermon-date">
+                        Nov 23, 2025
+                    </div>
+                    <div class="sermon-content">
+                        <h3 class="sermon-title">Peace I Leave With You | Sunday Sermon by Pastor Arman Urbiztondo</h3>
+                        <div class="sermon-speaker">
+                            <i class="fas fa-user"></i> Pastor Arman Urbiztondo
+                        </div>
+                        <p class="sermon-description">John 14:27
+27 Peace I leave with you; my peace I give you. I do not give to you as the world gives. Do not let your hearts be troubled and do not be afraid..</p>
+                        <div class="sermon-actions">
+                            <a href="https://youtu.be/o3xiJ9GzGGU?si=l_gLK4tSGfJ50q-b" class="btn-outline">
+                                <i class="fas fa-play-circle"></i> Watch
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sermon 4 -->
+                <div class="sermon-card upcoming-sermon">
+                    <div class="sermon-date">
+                       Nov 16, 2025
+                    </div>
+                    <div class="sermon-content">
+                        <h3 class="sermon-title">One Thing is Needed | Sunday Sermon by Dr. Laurence Gatawa</h3>
+                        <div class="sermon-speaker">
+                            <i class="fas fa-user"></i> Dr. Laurence Gatawa
+                        </div>
+                        <p class="sermon-description">One Thing is Needed Luke 10:38-42 Martha and Mary.</p>
+                        <div class="sermon-actions">
+                            <a href="https://youtu.be/BV41cGrlTB4?si=ZeaLrU1G9XBF3Q0p" class="btn-outline">
+                                <i class="fas fa-clock"></i> Watch
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sermon 5 -->
+                <div class="sermon-card upcoming-sermon">
+                    <div class="sermon-date">
+                        Nov 9, 2025
+                    </div>
+                    <div class="sermon-content">
+                        <h3 class="sermon-title">Is the Philippines a Blessed Nation? Sunday Sermon by Dr. Laurence Gatawa</h3>
+                        <div class="sermon-speaker">
+                            <i class="fas fa-user"></i> Dr. Laurence Gatawa
+                        </div>
+                        <p class="sermon-description">Matthew 6:19-34 - Seeking first God's kingdom in a world filled with competing priorities and anxieties.</p>
+                        <div class="sermon-actions">
+                            <a href="https://youtu.be/trpSh1_FMbE?si=LVLFobc6TbfkTEOV" class="btn-outline">
+                                <i class="fas fa-clock"></i> Watch
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="back-to-sermons">
+                <a href="sermons.html" class="btn-outline">
+                    <i class="fas fa-arrow-left"></i> Back to All Sermon Archives
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <div class="logo">
+                        <div class="logo-icon">
+                            <i><img src="images/327427241_3232026523774490_1548008337393578848_n.ico" alt=""></i>
+                        </div>
+                        <div class="logo-text">
+                            <h3>Emmanuel Christian Church</h3>
+                            <p>General Trias, Cavite</p>
+                        </div>
+                    </div>
+                    <p>Growing in faith, serving in love, and sharing the hope of Christ with our community.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/ecc.cavite" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.youtube.com/@emmanuelchristianchannelecc"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Service Times</h3>
+                    <ul class="footer-links">
+                        <li>Sunday Worship: Sunday, 9:00 AM - 11:00 AM</li>
+                        <li>Prayer Meeting: Wednesday, 7:00 - 8:00 PM</li>
+                        <li>Bible Studies: Different Schedules</li>
+                        <li>Youth Bible Study: Sunday, 11:00 - 12:00 NN</li>
+                        <li>Sunday School: Sunday, 2:00 - 4:00 PM</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to our newsletter to receive updates and announcements.</p>
+                    <div class="footer-newsletter">
+                        <form>
+                            <input type="email" placeholder="Your Email" required>
+                            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <div class="container">
+                <p>&copy; 2025 Emmanuel Christian Church. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

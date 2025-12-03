@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2021 Sermons - Emmanuel Christian Church</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style/styles.css">
+    <style>
+        .sermons-page {
+            padding: 80px 0 60px;
+        }
+        
+        .year-header {
+            background: linear-gradient(rgba(74, 107, 175, 0.9), rgba(74, 107, 175, 0.8)), url('https://i.postimg.cc/y6RTtSXL/3cd43506-a13f-47ca-baa6-992dcd2f5fe6.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .year-header h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .year-header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .sermons-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+        
+        .sermon-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+        }
+        
+        .sermon-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .sermon-date {
+            background-color: #4a6baf;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        .sermon-content {
+            padding: 1.5rem;
+        }
+        
+        .sermon-title {
+            color: #2c3e50;
+            margin-top: 0;
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+        
+        .sermon-speaker {
+            color: #4a6baf;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .sermon-description {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        
+        .sermon-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .tag {
+            background-color: #f0f4ff;
+            color: #4a6baf;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
+        
+        .sermon-actions {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .btn-outline {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: transparent;
+            color: #4a6baf;
+            border: 2px solid #4a6baf;
+            padding: 0.6rem 1.2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-outline:hover {
+            background-color: #4a6baf;
+            color: white;
+        }
+        
+        .back-to-sermons {
+            text-align: center;
+            margin-top: 3rem;
+        }
+        
+        .no-sermons {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 3rem;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            .sermons-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .year-header h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <img src="images/327427241_3232026523774490_1548008337393578848_n.ico" alt="logo-icon">
+                </div>
+                <div class="logo-text">
+                    <h1>Emmanuel Christian Church</h1>
+                    <p>General Trias, Cavite <i class="fas fa-location"></i></p>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <div class="year-header">
+        <div class="container">
+            <h1>2021 Sermon Archive</h1>
+        </div>
+    </div>
+
+    <section class="sermons-page">
+        <div class="container">
+            <div class="sermons-container">
+                <!-- Sermon 1 -->
+                <div class="sermon-card">
+                    <div class="sermon-date">
+                        Nov 5, 2021
+                    </div>
+                    <div class="sermon-content">
+                        <h3 class="sermon-title">Shorter Catechism Questions: Who is the Redeemer of God’s Elect? by Dr. Laurence Gatawa</h3>
+                        <div class="sermon-speaker">
+                            <i class="fas fa-user"></i>Dr. Laurence Gatawa
+                        </div>
+                        <p class="sermon-description">The only Redeemer of God’s elect is the Lord Jesus Christ, who, being the eternal Son of God became man, and so was and continues to be God and man, in two distinct natures and one person for ever.</p>
+                        <div class="sermon-actions">
+                            <a href="https://youtu.be/VnSxQ8CR9M8?si=OBhAK-BidaqrgNwi" class="btn-outline">
+                                <i class="fas fa-play-circle"></i> Watch
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sermon 2 -->
+                <div class="sermon-card">
+                    <div class="sermon-date">
+                        Oct 29, 2021
+                    </div>
+                    <div class="sermon-content">
+                        <h3 class="sermon-title">Shorter Catechism Questions: Did God Leave Man to Perish in Sin and Misery? by Dr. Laurence Gatawa</h3>
+                        <div class="sermon-speaker">
+                            <i class="fas fa-user"></i> Dr. Laurence Gatawa
+                        </div>
+                        <p class="sermon-description">God having out of his mere good pleasure, from all eternity, elected some to everlasting life, did enter into a covenant of grace, to deliver them out of the estate of sin and misery, and to bring them into an estate of salvation by a redeemer.</p>
+                        <div class="sermon-actions">
+                            <a href="https://youtu.be/fe_wbYCt8FU?si=8KMsvOCA1wrOx6yX" class="btn-outline">
+                                <i class="fas fa-play-circle"></i> Watch
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sermon 3 -->
+                <div class="sermon-card">
+                    <div class="sermon-date">
+                        Aug 13, 2021
+                    </div>
+                    <div class="sermon-content">
+                        <h3 class="sermon-title">Shorter Catechism Questions: What Misery Did the Fall Bring Upon Mankind? by Dr. Laurence Gatawa</h3>
+                        <div class="sermon-speaker">
+                            <i class="fas fa-user"></i> Dr. Laurence Gatawa
+                        </div>
+                        <p class="sermon-description">The fall brought upon mankind loss of communion with God, and his wrath and curse, so that we are justly liable to all miseries in this life, to death itself, and to punishment in hell for ever.</p>
+                        <div class="sermon-actions">
+                            <a href="https://youtu.be/6bpHxiVTJSE?si=PX1_kePHqWeJdGt8" class="btn-outline">
+                                <i class="fas fa-play-circle"></i> Watch
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sermon 4 -->
+                <div class="sermon-card">
+                    <div class="sermon-date">
+                        Jul 30, 2021
+                    </div>
+                    <div class="sermon-content">
+                        <h3 class="sermon-title">Shorter Catechism Questions: The Sinfulness of that State into which Man Fell by Dr. Laurence Gatawa</h3>
+                        <div class="sermon-speaker">
+                            <i class="fas fa-user"></i> Dr. Laurence Gatawa
+                        </div>
+                        <p class="sermon-description">The sinfulness of the state into which man fell includes the guilt of Adam’s first sin, the lack of the righteousness which he had at first, and the corruption of every part of his nature, which is commonly called Original Sin; together with all actual sins which flow from it.</p>
+                        <div class="sermon-actions">
+                            <a href="https://youtu.be/AVuj1Im7c10?si=ShPxGf-83lvtXYL6" class="btn-outline">
+                                <i class="fas fa-play-circle"></i> Watch
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sermon 5 -->
+                <div class="sermon-card">
+                    <div class="sermon-date">
+                        December 19, 2021
+                    </div>
+                    <div class="sermon-content">
+                        <h3 class="sermon-title">Shorter Catechism Questions: Into What State Did the Fall Bring Mankind? by Dr. Laurence Gatawa</h3>
+                        <div class="sermon-speaker">
+                            <i class="fas fa-user"></i> Dr. Laurence Gatawa
+                        </div>
+                        <p class="sermon-description">The State of Humankind After the Fall Into what state did the fall bring humankind? Westminster Shorter Catechism #17 The fall brought humankind into a state of sin and misery.</p>
+                        <div class="sermon-actions">
+                            <a href="https://youtu.be/W9l2yxoT0dw?si=LWDlxvCRJw9_l1hR" class="btn-outline">
+                                <i class="fas fa-play-circle"></i> Watch
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="back-to-sermons">
+                <a href="sermons.html" class="btn-outline">
+                    <i class="fas fa-arrow-left"></i> Back to All Sermon Archives
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <div class="logo">
+                        <div class="logo-icon">
+                            <i><img src="images/327427241_3232026523774490_1548008337393578848_n.ico" alt=""></i>
+                        </div>
+                        <div class="logo-text">
+                            <h3>Emmanuel Christian Church</h3>
+                            <p>General Trias, Cavite</p>
+                        </div>
+                    </div>
+                    <p>Growing in faith, serving in love, and sharing the hope of Christ with our community.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/ecc.cavite" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.youtube.com/@emmanuelchristianchannelecc"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Service Times</h3>
+                    <ul class="footer-links">
+                        <li>Sunday Worship: Sunday, 9:00 AM - 11:00 AM</li>
+                        <li>Prayer Meeting: Wednesday, 7:00 - 8:00 PM</li>
+                        <li>Bible Studies: Different Schedules</li>
+                        <li>Youth Bible Study: Sunday, 11:00 - 12:00 NN</li>
+                        <li>Sunday School: Sunday, 2:00 - 4:00 PM</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to our newsletter to receive updates and announcements.</p>
+                    <div class="footer-newsletter">
+                        <form>
+                            <input type="email" placeholder="Your Email" required>
+                            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <div class="container">
+                <p>&copy; 2025 Emmanuel Christian Church. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
